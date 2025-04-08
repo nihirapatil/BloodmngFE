@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Donor Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      background: #fff;
+      max-width: 600px;
+      margin: auto;
+      padding: 20px 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #d62828;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input, select {
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 15px;
+    }
+
+    button {
+      margin-top: 25px;
+      background-color: #d62828;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #a61d1d;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Donor Registration</h2>
+    <form action="/donor/register" method="POST">
+
+      <!-- Name -->
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <!-- Blood Type -->
+      <label for="blood_type">Blood Type</label>
+      <select id="blood_type" name="blood_type" required>
+        <option value="" disabled selected>Select your blood type</option>
+        <option value="A+">A+</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <option value="B-">B-</option>
+        <option value="AB+">AB+</option>
+        <option value="AB-">AB-</option>
+        <option value="O+">O+</option>
+        <option value="O-">O-</option>
+      </select>
+
+      <!-- Contact Info -->
+      <label for="contact_info">Contact Number or Email</label>
+      <input type="text" id="contact_info" name="contact_info" required placeholder="e.g. 9876543210 or example@email.com">
+
+      <!-- Last Donation Date -->
+      <label for="last_donation_date">Last Donation Date</label>
+      <input type="date" id="last_donation_date" name="last_donation_date">
+
+      <!-- Submit -->
+      <button type="submit">Register as Donor</button>
+    </form>
+  </div>
+
+</body>
+</html>

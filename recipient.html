@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Request Blood | LifeFlow</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff5f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .form-container {
+      background-color: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      width: 100%;
+    }
+
+    h1 {
+      text-align: center;
+      color: #dc2626;
+      margin-bottom: 30px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      background-color: #dc2626;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #b91c1c;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h1>Request Blood</h1>
+    <form action="/recipient/request" method="POST">
+
+      <!-- Name -->
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <!-- Blood Type -->
+      <label for="blood_type">Blood Type</label>
+      <select id="blood_type" name="blood_type" required>
+        <option value="" disabled selected>Select your blood type</option>
+        <option value="A+">A+</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <option value="B-">B-</option>
+        <option value="AB+">AB+</option>
+        <option value="AB-">AB-</option>
+        <option value="O+">O+</option>
+        <option value="O-">O-</option>
+      </select>
+
+      <!-- Contact Info -->
+      <label for="contact_info">Contact Number</label>
+      <input type="tel" id="contact_info" name="contact_info" pattern="[0-9]{10}" required placeholder="e.g. 9876543210">
+
+      <!-- Hospital -->
+      <label for="hospital_id">Hospital</label>
+      <select id="hospital_id" name="hospital_id" required>
+        <option value="" disabled selected>Select a hospital</option>
+        <option value="1">City Care Hospital</option>
+        <option value="2">LifeLine Hospital</option>
+        <option value="3">Red Cross Center</option>
+        <option value="4">Apollo Blood Bank</option>
+      </select>
+
+      <!-- Submit Button -->
+      <button type="submit">Submit Request</button>
+    </form>
+  </div>
+
+</body>
+</html>
